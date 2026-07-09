@@ -1,100 +1,137 @@
-# Credit Card Fraud Detection Project
+# 💳 KredAlert - Credit Card Fraud Detection
 
-This project detects fraudulent credit card transactions using a TensorFlow/Keras model and a Streamlit web app.
+A machine learning-based fraud detection system that identifies fraudulent credit card transactions using TensorFlow/Keras and provides predictions through an interactive Streamlit web application.
 
-## Project Files
+---
 
-- [app.py](app.py): Streamlit app for uploading transaction CSV files and generating predictions
-- [ml_model.py](ml_model.py): Training script that builds and saves the model and scaler
-- [make_csv.py](make_csv.py): Utility script to generate sample transaction input
-- [creditcard.csv](creditcard.csv): Training dataset
-- [sample_transactions.csv](sample_transactions.csv): Sample input for prediction testing
-- [requirements.txt](requirements.txt): Python dependencies
-- [architecture.md](architecture.md): High-level architecture documentation
+## 📌 Project Overview
 
-## Prerequisites
+Credit card fraud is one of the major challenges faced by financial institutions today. This project aims to detect fraudulent transactions by analyzing transaction patterns and applying machine learning techniques.
 
-- Python 3.9 to 3.12 recommended
-- pip
+Users can upload transaction data and instantly receive fraud predictions through a user-friendly web interface.
 
-## Setup
+---
 
-1.  Create a virtual environment:
+## 🚀 Features
 
-        python -m venv .venv
+- Fraud detection using Machine Learning
+- Interactive Streamlit web application
+- CSV file upload support
+- Real-time transaction predictions
+- Downloadable prediction results
+- Data preprocessing and feature scaling
+- User-friendly interface
 
-2.  Activate the virtual environment (Windows PowerShell):
+---
 
-        .\.venv\Scripts\Activate.ps1
+## 🛠️ Technologies Used
 
-3.  Install dependencies:
+- Python
+- TensorFlow / Keras
+- Scikit-Learn
+- Pandas
+- NumPy
+- Streamlit
 
-        pip install -r requirements.txt
+---
 
-## How To Run
+## 📂 Project Structure
 
-### 1. Train the model
+```text
+KredAlert-credit-card-fraud-detection/
+│
+├── README.md
+├── requirements.txt
+├── architecture.md
+│
+├── app.py
+├── main.py
+├── ml_model.py
+├── make_csv.py
+│
+├── fraud_detection_model.keras
+├── scaler.pkl
+├── model_metadata_cnn.json
+│
+└── sample_transactions.csv
+```
 
-Run:
+---
 
-    	python ml_model.py
+## 🔍 Workflow
 
-Expected output artifacts:
+1. Data Collection
+2. Data Preprocessing
+3. Feature Scaling
+4. Model Training using TensorFlow/Keras
+5. Fraud Prediction
+6. Result Generation through Streamlit
 
-- Model/fraud_detection_model.keras
-- Model/scaler.pkl
+---
 
-Important note:
-The current training script in [ml_model.py](ml_model.py) uses a hardcoded absolute dataset path. If training fails on your machine, update the dataset loading line to use the local [creditcard.csv](creditcard.csv) file in the project root.
+## 📈 Results
 
-### 2. Start the Streamlit app
+The model learns transaction patterns from historical credit card data and predicts whether a transaction is legitimate or fraudulent.
 
-Run:
+### Key Outcomes
 
-    	streamlit run app.py
+- Detects suspicious transactions automatically
+- Reduces manual verification efforts
+- Provides quick prediction results
+- Demonstrates an end-to-end machine learning workflow
 
-Then open the URL shown in the terminal, usually:
+---
 
-- http://localhost:8501
+## ▶️ How to Run
 
-### 3. Make predictions
+### Install Dependencies
 
-1. Upload a CSV file with required columns:
-   - Time
-   - V1 through V28
-   - Amount
-2. Click Predict
-3. Review the Prediction results
-4. Download the output CSV from the app
+```bash
+pip install -r requirements.txt
+```
 
-## Optional: Generate Sample Input
+### Train the Model
 
-Run:
+```bash
+python ml_model.py
+```
 
-    	python make_csv.py
+### Launch the Application
 
-This creates or refreshes [sample_transactions.csv](sample_transactions.csv).
+```bash
+streamlit run app.py
+```
 
-## Input Schema
+---
 
-Required columns:
+## 📊 Dataset
 
-- Time
-- V1 through V28
-- Amount
+The project uses the Credit Card Fraud Detection dataset for model training.
 
-If required columns are missing, the app returns a validation error.
+Due to GitHub file size limitations, the training dataset (`creditcard.csv`) is not included in this repository.
 
-## Troubleshooting
+Users can download the dataset separately and place it in the project directory before training the model.
 
-- Error loading model or scaler:
-  - Ensure training completed successfully and model files exist in the Model directory
-- Streamlit command not found:
-  - Confirm your virtual environment is activated before running commands
-- TensorFlow installation issues:
-  - Verify Python version compatibility and reinstall dependencies from [requirements.txt](requirements.txt)
+---
 
-## Notes
+## 💡 Skills Demonstrated
 
-- Prediction threshold is currently fixed in [app.py](app.py)
-- Missing values are filled with column means before scaling during inference
+- Machine Learning
+- Data Preprocessing
+- Feature Scaling
+- Model Training
+- Model Evaluation
+- Streamlit Deployment
+- Python Development
+- Data Analysis
+
+---
+
+## 👩‍💻 Author
+
+**Vaishnavi Poojary**
+
+Third-Year Computer Engineering Student  
+Aspiring Data Analyst | Machine Learning Enthusiast
+
+---
